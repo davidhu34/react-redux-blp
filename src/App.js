@@ -5,7 +5,7 @@ import { Add } from './actions'
 const App = ({ data, Add }) => (
     <div>
         <div>{data}</div>
-        <div onClick={() => Add()}>
+        <div onClick={Add}>
             add
         </div>
     </div>
@@ -15,6 +15,6 @@ const App = ({ data, Add }) => (
 export default connect(
     state => ({ ...state }),
     dispatch => ({
-        Add: () => dispatch( Add() )
+        Add: (e) => dispatch( Add() )
     })
 )(App)
